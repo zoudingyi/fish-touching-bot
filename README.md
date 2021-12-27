@@ -9,6 +9,15 @@
 > 注意：若要基于本项目使用 wechaty-puppet-padlocal 协议，需自行安装 padlocal 依赖。并且把 wechaty 版本降到 0.60.1 版本。[点此查看 padlocal-demo](https://github.com/zoudingyi/wechaty-puppet-padlocal-demo)<br>
 > 更多协议请参考：<https://wechaty.js.org/docs/puppet-providers/>
 
+## 功能
+
+- 工作时间内，每小时播报【摸鱼办】提醒信息（群提醒）。
+- 输入'摸鱼'可查看当前【摸鱼办】提醒信息。
+- 每天早上按时播报当天气候（群提醒）。
+- 输入'天气'可查询当前气温。
+- 下班时间提醒，给予亲切的下班问候（群提醒）。
+- 其他：可自行扩展。[Wechaty API 文档](https://wechaty.gitbook.io/wechaty/v/zh/)
+
 ## 运行
 
 ### 1. Clone project.
