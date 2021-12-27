@@ -2,7 +2,7 @@
 node_modules/
 *.memory-card.json
 # package-lock.json
-# .cz-config.js
+.cz-config.js
 
 # Editor directories and files
 .idea
