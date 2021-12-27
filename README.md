@@ -16,7 +16,9 @@
 - 每天早上按时播报当天气候（群提醒）。
 - 输入'天气'可查询当前气温。
 - 下班时间提醒，给予亲切的下班问候（群提醒）。
-- 其他：可自行扩展。[Wechaty API 文档](https://wechaty.gitbook.io/wechaty/v/zh/)
+- 其他：可自行扩展。
+
+**_注：要添加其他功能具体请看[Wechaty API 文档](https://wechaty.gitbook.io/wechaty/v/zh/)_**
 
 ## 运行
 
@@ -55,3 +57,20 @@ const config = {
 ```
 $ npm run dev
 ```
+
+## 效果图
+
+1.每小时播报（群内提醒）
+![效果图](/src/img/report1.jpg)
+
+2.下班提醒（群内提醒）
+![效果图](/src/img/report2.jpg)
+
+3.天气查询 （群内或单独给机器人发消息都可查询）
+![效果图](/src/img/report3.jpg)
+
+## 其他
+
+用到的时间处理工具：<br>
+[dayjs](https://github.com/iamkun/dayjs)<br>
+[node-schedule](https://github.com/node-schedule/node-schedule)
