@@ -1,29 +1,29 @@
-import schedule from 'node-schedule';
+import schedule, { RecurrenceSegment, Timezone } from 'node-schedule';
 
-interface Rule {
-  dayOfWeek: number[];
-  hour: number[];
-  minute: number;
-  second: number;
-  tz: string;
-}
-// second (0-59)
-// minute (0-59)
-// hour (0-23)
-// month (0-11)
-// dayOfWeek (0-6) Starting with Sunday
-// tz
-
-export function setSchedule(rule: any, callback: any) {
-  schedule.scheduleJob(rule, callback);
+export interface Rule {
+  date?: RecurrenceSegment;
+  dayOfWeek?: RecurrenceSegment;
+  hour?: RecurrenceSegment;
+  minute?: RecurrenceSegment;
+  month?: RecurrenceSegment;
+  second?: RecurrenceSegment;
+  year?: RecurrenceSegment;
+  tz?: Timezone;
 }
 
-export function createRule(rule: Rule | any) {
-  const Rule: any = new schedule.RecurrenceRule();
-  Object.keys(rule).forEach((key: string) => {
-    Rule[key] = rule[key];
-  });
-  return Rule;
+export const setSchedule = schedule.scheduleJob;
+
+export function createRule(rule: Rule) {
+  return new schedule.RecurrenceRule(
+    rule.year,
+    rule.month,
+    rule.date,
+    rule.dayOfWeek,
+    rule.hour,
+    rule.minute,
+    rule.second,
+    rule.tz
+  );
 }
 
 // *    *    *    *    *    *

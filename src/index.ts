@@ -34,4 +34,4 @@ bot.on('message', onMessage);
 bot
   .start()
   .then(() => log.info('StarterBot', name + ' Started.'))
-  .catch((e: any) => log.error('StarterBot', e));
+  .catch((e) => log.error('StarterBot', e));
