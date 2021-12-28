@@ -1,3 +1,5 @@
+import { Rule } from './utils/schedule';
+
 interface Config {
   name: string;
   token: string;
@@ -6,8 +8,8 @@ interface Config {
   workStartTime: string;
   workEndTime: string;
   weaRule: object;
-  fishRule: object;
-  leaveWorkRule: object;
+  fishRule: Rule;
+  leaveWorkRule: Rule;
 }
 
 const config: Config = {
