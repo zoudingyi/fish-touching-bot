@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "nodemon --ext js,ts --exec \"npm run eslint && ts-node src/index.ts\"",
+    "dev": "nodemon --ext js,ts --exec \"./node_modules/.bin/ts-node src/index.ts\"",
+    "dev:lint": "nodemon --ext js,ts --exec \"npm run eslint && npx ts-node src/index.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint src --ext .ts"
   },
