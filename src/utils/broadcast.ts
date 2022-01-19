@@ -62,11 +62,13 @@ function isWrokingTime(): boolean {
 
 function fishTouchMsg(): string {
   if (!isWrokingTime()) {
-    return '还在摸鱼，都下班了还摸个屁的鱼！';
+    return '别摸了，都没上班摸啥鱼';
   }
   const curDate = dayjs().format('MM-D-dddd-A'); // 当前日期
   const arrDate = curDate.split('-');
-  const [month, day, week, daylong] = arrDate;
+  const [m, d, week, daylong] = arrDate;
+  const month = Number(m);
+  const day = Number(d);
   const year = dayjs().year();
   const weekCn = weekdays.find(item => item.label === week)?.value;
   const yuandan = remainingDays(`${year + 1}-01-01`, 'day'); // 元旦
@@ -77,12 +79,12 @@ function fishTouchMsg(): string {
   let salary: number;
   if (month === '12') {
     salary =
-      Number(day) > payDay
+      day > payDay
         ? remainingDays(`${year + 1}-1-${payDay}`, 'day')
         : remainingDays(`${year}-12-${payDay}`, 'day');
   } else {
     salary =
-      Number(day) > payDay
+      day > payDay
         ? remainingDays(`${year}-${month + 1}-${payDay}`, 'day')
         : remainingDays(`${year}-${month}-${payDay}`, 'day');
   }
