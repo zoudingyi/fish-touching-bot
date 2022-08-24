@@ -9,6 +9,8 @@
 > 注意：若要基于本项目使用 wechaty-puppet-padlocal 协议，需自行安装 padlocal 依赖。并且把 wechaty 版本降到 0.60.1 版本。[点此查看 padlocal-demo](https://github.com/zoudingyi/wechaty-puppet-padlocal-demo)<br>
 > 更多协议请参考：<https://wechaty.js.org/docs/puppet-providers/>
 
+**2022-8-24 更新：当前使用版本通过 UOS 登录，这种方式不太稳定，且随时可能因为官方某些原因而无法使用，若想稳定运行最好使用 padlocal 协议。**
+
 ## 功能
 
 - 工作时间内，每小时播报【摸鱼办】提醒信息（群提醒）。

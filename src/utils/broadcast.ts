@@ -72,12 +72,11 @@ function fishTouchMsg(): string {
   const year = dayjs().year();
   const weekCn = weekdays.find(item => item.label === week)?.value;
   const yuandan = remainingDays(`${year + 1}-01-01`, 'day'); // 元旦
-  const chunjie = remainingDays(`${year + 1}-02-01`, 'day'); // 春节
+  const chunjie = remainingDays(`${year + 1}-01-22`, 'day'); // 春节
   const weekDays = 5 - dayjs().day(); // 周几
-  const meeting = remainingDays(`${year + 1}-01-22`, 'day'); // 年会
   // 发工资时间
   let salary: number;
-  if (month === '12') {
+  if (month === 12) {
     salary =
       day > payDay
         ? remainingDays(`${year + 1}-1-${payDay}`, 'day')
@@ -100,7 +99,7 @@ function fishTouchMsg(): string {
     daylong === 'AM' ? '上午' : '下午'
   }好摸鱼人！工作再累，一定不要忘记喝水哦！希望此刻看到消息的人可以和我一起来喝一杯水。及时排便洗手，记得关门。一小时后我会继续提醒大家喝水，和我一起成为一天喝八杯水的人吧！\n══════════\n🚇距离下班还有：${workEndHour}小时${workEndMinute}分钟\n🎮距离周末(大周)还有：${weekDays}天\n🕹️距离周末(小周)还有：${
     weekDays + 1
-  }天\n💰距离发工资还有：${salary}天\n🍁距离元旦还有：${yuandan}天\n🕺距离年会还有：${meeting}天\n🏮距离春节还有：${chunjie}天\n══════════\n有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着。上班是帮老板赚钱，摸鱼是赚老板的钱！最后，祝愿天下所有摸鱼人，都能愉快的渡过每一天`;
+  }天\n💰距离发工资还有：${salary}天\n🍁距离元旦还有：${yuandan}天\n🏮距离春节还有：${chunjie}天\n══════════\n有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着。上班是帮老板赚钱，摸鱼是赚老板的钱！最后，祝愿天下所有摸鱼人，都能愉快的渡过每一天`;
 }
 
 function leaveWorkMsg() {

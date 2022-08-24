@@ -20,10 +20,11 @@ const bot = WechatyBuilder.build({
    *  - wechaty-puppet-padlocal (pad protocol, token required)
    *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
    */
-  puppet: 'wechaty-puppet-wechat'
-  // puppetOptions: {
-  //   token
-  // }
+  puppet: 'wechaty-puppet-wechat',
+  puppetOptions: {
+    uos: true // 开启uos协议
+    // token
+  }
 });
 
 bot.on('scan', onScan);
@@ -34,4 +35,4 @@ bot.on('message', onMessage);
 bot
   .start()
   .then(() => log.info('StarterBot', name + ' Started.'))
-  .catch((e) => log.error('StarterBot', e));
+  .catch(e => log.error('StarterBot', e));
